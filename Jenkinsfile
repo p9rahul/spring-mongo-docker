@@ -28,7 +28,16 @@
                       sh "docker build -t p9rahul/spring-boot-mongo ."
                   }
            }
-        
+	    
+        stage("Docker Push"){
+            steps{
+			withCredentials([string(credentialsId: 'Docker_Hub_Credentials', variable: 'Docker_credentials')]) {
+			sh "docker login -u p9rahul -p ${Docker_Hub_Credentials}"
+			}
+				
+                sh "docker push -t p9rahul/spring-boot-mongo "
+            }
+        }
        
     }
     
