@@ -38,6 +38,16 @@
                 sh "docker push p9rahul/spring-boot-mongo "
             }
         }
+	    
+	  stage("Deploy on K8S cluster"){
+            steps{
+                KubernetesDeploy(
+					configs: 'springBootMongo.yml',
+					kubeconfigId: 'Kubernetes_cluster_config', //name cpoy from jenkins credential
+					enableConfigSubstitution: true //use this when we use dynamic environment variable in manefest file
+				)
+            }
+        }
        
     }
     
