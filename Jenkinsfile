@@ -25,7 +25,7 @@
 		
         stage("Build Docker image"){
                   steps{
-                      sh "docker build -t p9rahul/spring-boot-mongo ."
+                      sh "sudo docker build -t p9rahul/spring-boot-mongo ."
                   }
            }
         
