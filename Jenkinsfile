@@ -31,7 +31,7 @@
 	    
         stage("Docker Push"){
             steps{
-			withCredentials([string(credentialsId: 'Docker_Hub_Credentials', variable: 'Docker_credentials')]) {
+			withCredentials([string(credentialsId: 'Docker_Hub_Credentials', variable: 'Docker_Hub_Credentials')]) {
 			sh "docker login -u p9rahul -p ${Docker_Hub_Credentials}"
 			}
 				
