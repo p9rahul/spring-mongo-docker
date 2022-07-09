@@ -35,7 +35,7 @@
 			sh "docker login -u p9rahul -p ${Docker_Hub_Credentials}"
 			}
 				
-                sh "docker push -t p9rahul/spring-boot-mongo "
+                sh "docker push p9rahul/spring-boot-mongo "
             }
         }
        
