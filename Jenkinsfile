@@ -38,7 +38,8 @@
                 sh "docker push p9rahul/spring-boot-mongo "
             }
         }
-	    
+	  
+	    /**
 	  stage("Deploy on K8S cluster"){
             steps{
                 KubernetesDeploy(
@@ -48,6 +49,13 @@
 				)
             }
         }
+	**/
+	    stage("Deploy To Kuberates Cluster"){
+		    steps{
+			sh "kubectl apply -f springBootMongo.yml"
+		    }
+		}
+
        
     }
     
