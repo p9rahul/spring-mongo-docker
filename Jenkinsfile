@@ -43,7 +43,7 @@
             steps{
                 KubernetesDeploy(
 					configs: 'springBootMongo.yml',
-					kubeconfigId: 'Kubernetes_cluster_config', //name cpoy from jenkins credential
+					kubeconfigId: 'KUBERNETES_CLUSTER_CONFIG', //name cpoy from jenkins credential
 					enableConfigSubstitution: true //use this when we use dynamic environment variable in manefest file
 				)
             }
